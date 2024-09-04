@@ -1,0 +1,176 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+class Program
+{
+
+    class Produto
+    {
+        public string Nome { get; set; }
+        public int Quantidade { get; set; }
+        public double Valor { get; set; }
+
+        public Produto(string nome, int quantidade, double valor)
+        {
+            Nome = nome;
+            Quantidade = quantidade;
+            Valor = valor;
+        }
+    }
+
+    // Static pra fazer a list de produtos
+    static List<Produto> estoque = new List<Produto>();
+
+    static void Main()
+    {
+        int opcao;
+        do
+        {
+
+            MostrarMenu();
+
+            if (!int.TryParse(Console.ReadLine(), out opcao))
+            {
+                Console.WriteLine("Escolha inválida");
+                opcao = 100;
+                Console.ReadKey();
+            }
+
+
+            switch (opcao)
+            {
+                case 1:
+                    AdicionarProduto();
+                    break;
+                case 2:
+                    ListarProdutos();
+                    break;
+                case 3:
+                    RemoverProduto();
+                    break;
+                case 4:
+                    EntradaEstoque();
+                    break;
+                case 5:
+                    SaidaEstoque();
+                    break;
+                case 0:
+                    Console.WriteLine("Saindo...");
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida. Tente novamente.");
+                    break;
+            }
+
+        } while (opcao != 0);
+    }
+
+    static void MostrarMenu()
+    {
+        Console.Clear();
+        Console.WriteLine("[1] Novo Produto");
+        Console.WriteLine("[2] Listar Produtos");
+        Console.WriteLine("[3] Remover Produtos");
+        Console.WriteLine("[4] Entrada Estoque");
+        Console.WriteLine("[5] Saída Estoque");
+        Console.WriteLine("[0] Sair");
+        Console.Write("Escolha uma opção: ");
+    }
+
+    static void AdicionarProduto()
+    {
+        Console.Write("Digite o nome do produto: ");
+        string nome = Console.ReadLine();
+        Console.Write("Digite a quantidade do produto: ");
+        int quantidade = int.Parse(Console.ReadLine());
+        Console.Write("Digite o valor do produto: ");
+        double valor = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+        // Adiciona o produto ao estoque
+        estoque.Add(new Produto(nome, quantidade, valor));
+        Console.WriteLine("Produto adicionado com sucesso!");
+        Console.ReadKey();
+    }
+
+    static void ListarProdutos()
+    {
+        if (estoque.Count > 0)
+        {
+            Console.WriteLine("Produtos em estoque: ");
+            foreach (var produto in estoque)
+            {
+                Console.WriteLine("Nome: " + produto.Nome + " Quantidade: " + produto.Quantidade + " Valor Unitário: " + produto.Valor.ToString("F2"), CultureInfo.InvariantCulture);
+            }
+
+        }
+        else
+            Console.WriteLine("Não há produtos em estoque");
+        Console.ReadKey();
+    }
+
+    static void RemoverProduto()
+    {
+        Console.Write("Digite o nome do produto a ser removido: ");
+        string nome = Console.ReadLine();
+        Produto produtoRemover = estoque.Find(p => p.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
+
+        if (produtoRemover != null)
+        {
+            estoque.Remove(produtoRemover);
+            Console.WriteLine("Produto removido com sucesso!");
+        }
+        else
+        {
+            Console.WriteLine("Produto não encontrado.");
+        }
+        Console.ReadKey();
+    }
+
+    static void EntradaEstoque()
+    {
+        Console.Write("Digite o nome do produto: ");
+        string nome = Console.ReadLine();
+        Produto produto = estoque.Find(p => p.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
+
+        if (produto != null)
+        {
+            Console.Write("Digite a quantidade a ser adicionada: ");
+            int quantidade = int.Parse(Console.ReadLine());
+            produto.Quantidade += quantidade;
+            Console.WriteLine("Quantidade atualizada com sucesso!");
+        }
+        else
+        {
+            Console.WriteLine("Produto não encontrado. Adicione o produto primeiro.");
+        }
+        Console.ReadKey();
+    }
+
+    static void SaidaEstoque()
+    {
+        Console.Write("Digite o nome do produto: ");
+        string nome = Console.ReadLine();
+        Produto produto = estoque.Find(p => p.Nome.Equals(nome, StringComparison.OrdinalIgnoreCase));
+
+        if (produto != null)
+        {
+            Console.Write("Digite a quantidade a ser removida: ");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            if (quantidade <= produto.Quantidade)
+            {
+                produto.Quantidade -= quantidade;
+                Console.WriteLine("Quantidade atualizada com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("Quantidade solicitada maior que a disponível em estoque.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Produto não encontrado.");
+        }
+        Console.ReadKey();
+    }
+}

@@ -1,0 +1,15 @@
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\bin\Debug\net8.0\Cadastro de Cliente.exe
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\bin\Debug\net8.0\Cadastro de Cliente.deps.json
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\bin\Debug\net8.0\Cadastro de Cliente.runtimeconfig.json
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\bin\Debug\net8.0\Cadastro de Cliente.dll
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\bin\Debug\net8.0\Cadastro de Cliente.pdb
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.GeneratedMSBuildEditorConfig.editorconfig
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.AssemblyInfoInputs.cache
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.AssemblyInfo.cs
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.csproj.CoreCompileInputs.cache
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.sourcelink.json
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.dll
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\refint\Cadastro de Cliente.dll
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.pdb
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\Cadastro de Cliente.genruntimeconfig.cache
+D:\BiblioteC#\Cadastro de Cliente\Cadastro de Cliente\obj\Debug\net8.0\ref\Cadastro de Cliente.dll
